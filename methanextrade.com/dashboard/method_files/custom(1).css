@@ -1,0 +1,80 @@
+/* @import url("../css/icons.min.css"); */
+
+.ca-width {
+    max-width: 800px;
+}
+
+.amt-capital {
+    font-size: 14px;
+}
+
+.per-ca-width {
+    width: 100%;
+    min-height: 250px;
+}
+
+.alert-warning {
+    background-color: #ffb822;
+    color: #fffbe4
+}
+
+.in-no {
+    font-size: 50px;
+}
+
+.depo-suc-wid {
+    min-width: 70%;
+}
+
+.input-copy-bit {
+    width: 60em;
+}
+
+.trans-invoice-wd {
+    width: 90em
+}
+
+.kyc-info-check li {
+    list-style: none;
+}
+
+.not-fo-icon {
+    font-size: 50px;
+}
+
+.fon-cen {
+    margin: auto;
+    display: block;
+    width: 50px;
+}
+
+.waves-effect {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .per-ca-width {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .with-btn-width {
+        width: 100%;
+        margin: 0.5rem 2rem 0 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .fon-cen {
+        width: 35px;
+    }
+    .fon-cen-text {
+        font-size: 0.7rem;
+    }
+    .nav-link {
+        padding: .5rem .8rem;
+    }
+}

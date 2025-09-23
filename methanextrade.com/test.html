@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fake Server Scraper</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    #log {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 800px;
+      height: 300px;
+      overflow-y: auto;
+      padding: 15px;
+      box-shadow: 0 0 10px #0ea5e9;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .log-line {
+      margin-bottom: 4px;
+    }
+
+    .success {
+      color: #22c55e;
+    }
+
+    .info {
+      color: #facc15;
+    }
+
+    .error {
+      color: #ef4444;
+    }
+
+    #startBtn {
+      padding: 12px 24px;
+      background: #0ea5e9;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #startBtn:hover {
+      background: #0284c7;
+    }
+
+    #server-list {
+      margin-top: 20px;
+      width: 90%;
+      max-width: 800px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .server {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 5px;
+      padding: 8px;
+      text-align: center;
+      box-shadow: 0 0 5px #0ea5e9;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .server.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 Fake Server Scraper</h1>
+  <div id="log"></div>
+  <button id="startBtn">🔍 Start Scraping</button>
+  <div id="server-list"></div>
+
+  <script>
+    const servers = [
+      "Alpha-1", "Beta-7", "Gamma-2", "Delta-5", "Epsilon-9",
+      "Zeta-4", "Eta-3", "Theta-8", "Iota-6", "Kappa-11",
+      "Lambda-12", "Mu-15", "Nu-10", "Xi-14", "Omicron-13",
+      "Pi-16", "Rho-17", "Sigma-19", "Tau-18", "Upsilon-20",
+      "Phi-21", "Chi-22", "Psi-23", "Omega-24", "Server-X",
+      "Server-Y", "Server-Z", "Node-Alpha", "Node-Beta", "Node-Gamma"
+    ];
+
+    const logEl = document.getElementById("log");
+    const serverListEl = document.getElementById("server-list");
+    const startBtn = document.getElementById("startBtn");
+
+    const fakeSources = [
+      "Querying AWS server list...",
+      "Connecting to global DNS servers...",
+      "Scraping GitHub repositories...",
+      "Checking public APIs...",
+      "Scanning data centers worldwide...",
+      "Pinging known server addresses...",
+      "Analyzing encrypted server lists...",
+      "Crawling cloud provider endpoints..."
+    ];
+
+    function appendLog(message, type="info") {
+      const line = document.createElement("div");
+      line.classList.add("log-line", type);
+      line.textContent = message;
+      logEl.appendChild(line);
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    function revealServer(serverName) {
+      const serverEl = document.createElement("div");
+      serverEl.classList.add("server");
+      serverEl.textContent = `🟢 ${serverName}`;
+      serverListEl.appendChild(serverEl);
+      setTimeout(() => serverEl.classList.add("show"), 100);
+    }
+
+    async function startScraping() {
+      logEl.innerHTML = "";
+      serverListEl.innerHTML = "";
+      startBtn.disabled = true;
+      appendLog("Starting scraping process...", "info");
+
+      for (let i = 0; i < fakeSources.length; i++) {
+        appendLog(fakeSources[i], "info");
+        await new Promise(r => setTimeout(r, 800 + Math.random() * 700));
+      }
+
+      appendLog("✅ Sources scanned. Discovering servers...", "success");
+      await new Promise(r => setTimeout(r, 1000));
+
+      for (let i = 0; i < servers.length; i++) {
+        appendLog(`✅ Found server: ${servers[i]}`, "success");
+        revealServer(servers[i]);
+        await new Promise(r => setTimeout(r, 300 + Math.random() * 500));
+      }
+
+      appendLog("🎉 Scraping complete. All servers are listed above.", "success");
+      startBtn.disabled = false;
+    }
+
+    startBtn.addEventListener("click", startScraping);
+  </script>
+</body>
+</html>

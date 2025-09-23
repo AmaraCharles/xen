@@ -1,0 +1,142 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.qr_img {
+    width: 250px;
+}
+
+.custom-pagination {}
+
+.font-20 {
+    font-size: 20px !important;
+}
+
+.report-card>div:first-child {
+    background: #2b3040;
+    padding: 12px;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 2px 4px 1px rgb(0 0 0 / 9%);
+}
+
+.report-card .report-main-icon {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.chart-report-card h3,
+.report-card h3 {
+    font-weight: 600;
+    font-size: 15px !important;
+}
+
+.pur-col-bg {
+    background-color: #0faf59
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {}
+
+.blink_cyan {
+    animation: blinker 2s linear infinite;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border: 1px solid #01caca;
+    background-color: #01caca;
+    border-radius: 100%;
+}
+
+.blink_orange {
+    animation: blinker 2s linear infinite;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border: 1px solid #ff7b01;
+    background-color: #ff7b01;
+    border-radius: 100%;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0.6;
+    }
+}
+.widget-list .widget-list-item .widget-list-title {
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+}
+
+.widget-list .widget-list-item {
+    display: table;
+    width: 100%;
+    background: rgba(255,255,255,.15);
+    text-decoration: none;
+    color: #fff;
+}
+
+.widget-list .widget-list-item .widget-list-media.icon i {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.widget-list .widget-list-item .widget-list-media.icon {
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.widget-list .widget-list-item .widget-list-media {
+    width: 70px;
+    height: 60px;
+    padding: 10px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.widget-list .widget-list-item .widget-list-content {
+    padding: 10px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.widget-list .widget-list-item .widget-list-action {
+    padding: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    width: 10%;
+    padding-left: 15px;
+    text-align: center;
+}
+
+.stock-card{
+    background: unset;
+      background-color: #000000 !important;
+      padding: 20px;
+      margin-bottom:10px
+  }
+  .stock-logo-holder {
+    text-align: center;
+  }
+  
+  .stock-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  
+  .stock-logo-holder h4{
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

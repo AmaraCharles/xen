@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+.master-card {
+    font-family: "Share Tech Mono", monospace;
+    min-width: 320px;
+    min-height: 170px;
+    background-size: 100% 100% !important;
+    position: relative;
+    color: #ffffff;
+    background-image: url(../../../dashboard/images/cc-back.jpg);
+    /* background: -webkit-gradient( linear, left top, right top, color-stop(60%, #4092b5), color-stop(90%, #3580aa));
+    background: -webkit-linear-gradient(left, #4092b5 60%, #3580aa 90%);
+    background: -o-linear-gradient(left, #4092b5 60%, #3580aa 90%);
+    background: linear-gradient(to right, #005fee 60%, #033d94 90%); */
+    border-radius: 0.75rem;
+    font-size: 10px;
+}
+
+.card_holder,
+.card_expiration,
+.card_type,
+.card_status,
+.card_account_number,
+.card_cvv,
+.card_number,
+.card_chip,
+.contact_less {
+    position: absolute;
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: 0 -1px 0px rgba(155, 155, 155, 0.5), 0 1px 1px rgba(0, 0, 0, 20.75);
+}
+
+.card_logo {
+    position: absolute;
+    left: 25px;
+    top: 10px;
+}
+
+.card_type {
+    font-size: 18px;
+    color: #000;
+    right: 18px;
+    bottom: 90px;
+    text-transform: lowercase;
+}
+
+.card_status {
+    right: 20px;
+    top: 20px;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+}
+
+.card_account_number {
+    left: 120px;
+    bottom: 90px;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+}
+
+.card_number {
+    left: 20px;
+    bottom: 65px;
+    font-size: 1.8em;
+    letter-spacing: 4px;
+}
+
+.valid_thru {
+    font-size: 50%;
+    letter-spacing: 1px;
+}
+
+.card_expiration {
+    left: 60px;
+    bottom: 40px;
+    font-size: 1.3em;
+    letter-spacing: 4px;
+}
+
+.card_chip {
+    left: 20px;
+    bottom: 85px;
+}
+
+.card_cvv {
+    left: 180px;
+    bottom: 50px;
+    font-size: 1.3em;
+    letter-spacing: 4px;
+    color: #2f2e2d;
+    font-weight: 100 !important;
+}
+
+.contact_less {
+    position: absolute;
+    left: 70px;
+    bottom: 82px;
+}
+
+.card_holder {
+    left: 20px;
+    bottom: 15px;
+    font-size: 1.8em;
+}
+
+.card_icon {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+}
+
+.card_icon i {
+    font-size: 4em;
+}
+
+@media (max-width: 767.98px) {}
+
+@media (max-width: 575.98px) {
+    .just-ify {
+        justify-content: center;
+    }
+    .master-card {
+        width: 320px;
+        height: 170px;
+        background-size: 100% 100% !important;
+        position: relative;
+        color: #ffffff;
+    }
+}

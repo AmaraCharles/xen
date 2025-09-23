@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://harnishdesign.net/demo/html/oxyy/otp-6.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<link href="./favicon.png" rel="icon">
+<title>Xenithoptions</title>
+<meta name="description" content="Login and Register Form Html Template">
+<meta name="author" content="harnishdesign.net">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+<!-- Web Fonts
+========================= -->
+<link rel="stylesheet" href="./otp_files/css" type="text/css">
+
+<!-- Stylesheet
+========================= -->
+<link rel="stylesheet" type="text/css" href="./otp_files/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./otp_files/all.min.css">
+<link rel="stylesheet" type="text/css" href="./otp_files/stylesheet.css">
+<!-- Colors Css -->
+<link id="color-switcher" type="text/css" rel="stylesheet" href="./otp_files/otp-6.html">
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader" style="display: none;">
+  <div class="lds-ellipsis" style="display: none;">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<!-- Preloader End -->
+
+<div id="main-wrapper" class="oxyy-login-register min-vh-100 d-flex flex-column bg-transparent">
+  <div class="container my-auto">
+    <div class="row g-0">
+      <div class="col-11 col-sm-9 col-md-7 col-lg-5 col-xl-4 m-auto text-center py-5">
+        <img src="logo.png" alt="" width="200px" height="30px" >
+        <!-- <div class="logo text-center mb-2"> <a href="https://harnishdesign.net/demo/html/oxyy/index.html" title="Oxyy"><img src="./logo.png" alt="Oxyy"></a> </div> -->
+        <h4 class="mb-4 mt-3"> Verification</h4>
+        <div class="live-section"></div>
+        <!-- <p class="text-center"><img class="img-fluid" src="./otp_files/otp-icon.png" alt="verification"></p> -->
+        <p class="text-muted mb-4">Enter the verification code we sent to <br>
+          <span class="text-dark text-4" id="emfield"></span></p>
+        <form id="otp-screen" method="post">
+          <div class="input-group">
+            <input type="text" class="form-control text-center text-6 py-2" maxlength="1" required="" autocomplete="off">
+            <input type="text" class="form-control text-center text-6 py-2" maxlength="1" required="" autocomplete="off">
+            <input type="text" class="form-control text-center text-6 py-2" maxlength="1" required="" autocomplete="off">
+            <input type="text" class="form-control text-center text-6 py-2" maxlength="1" required="" autocomplete="off">
+            <input type="text" class="form-control text-center text-6 py-2" maxlength="1" required="" autocomplete="off">
+            <input type="text" class="form-control text-center text-6 py-2" maxlength="1" required="" autocomplete="off">
+
+          </div>
+          <div class="d-grid my-4" style="background-color: #0d61ba;">
+			<button class="btn btn-primary shadow-none" id="verifyBtn" type="submit" onclick="verify()" style="background-color: #0d61ba; border: none;">Verify</button>
+		  </div>
+        </form>
+        <p class="text-center text-muted mb-0">Didn't get the code? <a id="again" href="#">Resend it</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bg-white py-2">
+    <p class="text-center text-2 text-muted mb-0">Copyright © 2021 <a href="./otp_files/otp-6.html">Xenithoptions</a>. All Rights Reserved.</p>
+  </div>
+</div>
+
+<!-- Styles Switcher -->
+<!-- Styles Switcher End --> 
+
+<!-- Script --> 
+
+<script>
+function wait(){
+
+  location.href="Verify.html"
+
+
+}
+
+function verify(e){
+  event.preventDefault()
+  $('#verifyBtn').html("Loading...")
+  setTimeout(wait,3000)
+
+  
+}
+$(document).ready(async function () {
+       
+        
+  var em= localStorage.getItem("email")
+var emfield=document.getElementById('emfield')
+emfield.innerHTML=em;
+      
+      });
+  
+
+ 
+</script>
+
+<script>
+
+async function resendEmail(values) {
+         await $.ajax({
+             type: "POST",
+             url: "https://imristradehub-render-hy1c.onrender.com/auth/register/resend",
+             dataType: "json",
+             data: { ...values },
+             timeout: 30000,
+             success: function (data) {
+              
+                 $('.live-section').html("A new OTP has been sent to the email address below").addClass('alert-primary')
+                 setTimeout(function () {
+                     $(location).prop('href', './otp.html')
+                 }, 3000)
+
+             },
+             error: function (xhr, status, error) {
+                 red();
+            
+                 ;
+                 $('.live-section').html("User already exists").addClass('alert-danger')
+             }
+         });
+
+     }
+
+
+     $('#again').click(function (e) {
+         e.preventDefault(); // prevents page reload
+         
+
+       
+         var email= localStorage.getItem("email")
+        
+         resendEmail({ email });
+        //  blurr();
+        //  alert("please re-check your email for a new OTP")
+         
+     });
+
+</script>
+<script src="./otp_files/jquery.min.js.download"></script> 
+<script src="./otp_files/bootstrap.bundle.min.js.download"></script> 
+<!-- Style Switcher --> 
+<script src="./otp_files/switcher.min.js.download"></script> 
+<script src="./otp_files/theme.js.download"></script>
+
+<!-- Start of LiveChat (www.livechat.com) code -->
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '299523a5fc26d7cc99fd85901c0b12ab451f933b';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<!-- End of LiveChat code -->
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" async></script>
+
+    
+<div class="gtranslate_wrapper"></div>
+   <script>
+	   document.addEventListener('DOMContentLoaded', function() {
+		   try {
+			   window.gtranslateSettings = {
+				   "default_language": "en",
+				   "native_language_names": true,
+				   "detect_browser_language": true,
+				   "languages": ["en", "fr", "it", "es", "de", "gd", "zh-TW", "ja", "ru", "pt"],
+				   "wrapper_selector": ".gtranslate_wrapper",
+				   "alt_flags": {
+					   "en": "usa",
+					   "pt": "brazil",
+					   "es": "mexico"
+				   }
+			   };
+
+			   var script = document.createElement('script');
+			   script.src = "https://cdn.gtranslate.net/widgets/latest/float.js";
+			   script.async = true;
+			   script.onerror = function() {
+				   console.error('Error loading the GTranslate script.');
+			   };
+			   document.head.appendChild(script);
+		   } catch (error) {
+			   console.error('Error setting up GTranslate:', error);
+		   }
+	   });
+   </script>
+
+<!-- Smartsupp Live Chat script -->
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'd1b3d6635aba3b909cbcb08e318c2f1be45d964e';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'd1b3d6635aba3b909cbcb08e318c2f1be45d964e';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+</body></html>

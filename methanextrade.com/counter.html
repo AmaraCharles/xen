@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex;justify-content: center;align-items: center;height: 100vh;">
+
+<div id="container">
+
+<div id="screen" style="border: 1px solid #000;padding: 10px; margin-bottom:20px"></div>
+<div id="button-wrapper" style="display: flex;width: 300px; justify-content: space-between;">
+    <button id="add" onclick="double(this)">+</button>
+    <button id="subtract" onclick="double(this)">-</button>
+</div>
+
+</div>
+
+
+    <script>
+
+
+ var result=0;
+
+
+ var screen=document.getElementById("screen")
+
+   function subtract() {
+   
+
+ result--
+
+ console.log(result);
+ screen.innerHTML=result
+ 
+ 
+
+    }
+
+function double(element) {
+var condition=element.innerHTML
+result=concat()
+
+console.log(condition);
+
+// screen.innerHTML=result
+
+
+
+}
+
+
+
+
+
+
+
+    </script>
+    
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'd1b3d6635aba3b909cbcb08e318c2f1be45d964e';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+</body>
+</html>
