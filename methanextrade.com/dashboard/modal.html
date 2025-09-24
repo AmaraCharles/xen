@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Modal Trigger</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Trigger Button -->
+    <button id="openInvestModal" class="btn btn-primary">Open Invest Modal</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="investModal">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-content-bg">
+            <div class="modal-content" style="color: black;">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color: black;">Confirm to Copy Trade on <span class="planName"></span></h5>
+                    <button type="button" class="close" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <form action="http://xenithoptions.com/user/invest" method="post">
+                    <input type="hidden" name="_token" value="g6DuYprQydbtBW8TwGjKUT15Rgy1zZX33Bg2Yoj5">
+                    <input type="hidden" name="plan_id">
+                    <div class="modal-body">
+                        <!-- Modal content here -->
+
+                        <div class="modal fade" id="investModal">
+                            <div class="modal-dialog modal-lg modal-dialog-centered modal-content-bg">
+                                <div class="modal-content" style="color: black;">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" style="color: black;">
+                                                                    Confirm to Copy Trade on <span class="planName"></span>
+                                                            </h5>
+                                        <button type="button" class="close" data-bs-dismiss="modal">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <form action="http://xenithoptions.com/user/invest" method="post">
+                                        <input type="hidden" name="_token" value="g6DuYprQydbtBW8TwGjKUT15Rgy1zZX33Bg2Yoj5">                <input type="hidden" name="plan_id">
+                                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <h6 class="text-center investAmountRange" style="color: black;"></h6>
+                                                    <p class="text-center mt-1 interestDetails" style="color: black;"></p>
+                                                    
+                                                    <p class="text-center" style="color: black;"><strong class="calculatedInterest"></strong></p>
+                                                </div>
+                        
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="required" for="wallet_type">Pay Via</label>
+                                                            <select class="form-control form--control form-select" name="wallet_type" required="" id="wallet_type">
+                                                                <option value="">Select One</option>
+                                                                                                                                                         
+                                                                                                    </select>
+                                                            <code class="gateway-info rate-info d-none">Rate: 1 USD = <span class="gateway-rate"></span> <span class="method_currency"></span></code>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="required" for="amount">Copy Amount</label>
+                                                            <div class="input-group">
+                                                                <input type="number" step="any" min="0" class="form-control form--control" name="amount" required="" id="amount">
+                                                                <div class="input-group-text">USD</div>
+                                                            </div>
+                                                            <code class="gateway-info d-none">Charge: <span class="charge"></span> USD. Total amount: <span class="total"></span> USD</code>
+                                                        </div>
+                                                    </div>
+                        
+                                                    <div class="col-md-6 compoundInterest">
+                                                        <div class="form-group">
+                                                            <label for="compound_interest">Compound Interest (optional)</label>
+                                                            <div class="input-group">
+                                                                <input type="number" min="0" class="form-control form--control" name="compound_interest" id="compound_interest">
+                                                                <div class="input-group-text">Times</div>
+                                                            </div>
+                                                            <small class="fst-italic text--info"><i class="fas fa-info-circle"></i> Your interest will add to the investment capital amount for a specific time that you're entering.</small>
+                                                        </div>
+                                                    </div>
+                        
+                                                                                    <div class="col-md-6 investTime">
+                                                            <div class="form-group">
+                                                                <label class="required" for="invest_time">Auto Schedule Invest</label>
+                                                                <select class="form-control form--control form-select" name="invest_time" required="" id="invest_time">
+                                                                    <option value="invest_now">Invest Now</option>
+                                                                    <option value="schedule">Schedule</option>
+                                                                </select>
+                                                                <small class="fst-italic text--info"><i class="fas fa-info-circle"></i> You can set your investment as a scheduler or invest instant.</small>
+                                                            </div>
+                                                        </div>
+                                                                            </div>
+                        
+                                                                            <div class="row schedule" style="display: none;">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="required" for="schedule_times">Schedule For</label>
+                                                                <div class="input-group">
+                                                                    <input type="number" min="0" class="form-control form--control" name="schedule_times" id="schedule_times">
+                                                                    <span class="input-group-text">Times</span>
+                                                                </div>
+                                                                <small class="fst-italic text--info"><i class="fas fa-info-circle"></i> Set how many times you want to invest.</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="required" for="hours">After</label>
+                                                                <div class="input-group">
+                                                                    <input type="number" min="0" class="form-control form--control" name="hours" id="hours">
+                                                                    <span class="input-group-text">Hours</span>
+                                                                </div>
+                                                                <small class="fst-italic text--info"><i class="fas fa-info-circle"></i> Set a frequency at which you prefer to make investments.</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                            </div>
+                                                        <div class="modal-footer">
+                                                                    <button type="button" class="btn btn--dark" style="background:red;" data-bs-dismiss="modal">No</button>
+                                                <button type="submit" style="background:green;" class="btn btn--base">Confirm CopyTrade</button>
+                                                            </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                           
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn--dark" style="background:red;" data-bs-dismiss="modal">No</button>
+                        <button type="submit" style="background:green;" class="btn btn--base">Confirm CopyTrade</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js (needed for Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Manual Modal Trigger
+      document.addEventListener('DOMContentLoaded', function() {
+        var investModal = new bootstrap.Modal(document.getElementById('investModal'));
+        var openModalBtn = document.getElementById('openInvestModal');
+
+        openModalBtn.addEventListener('click', function() {
+          investModal.show(); // Show the modal on button click
+        });
+      });
+    </script>
+</body>
+</html>

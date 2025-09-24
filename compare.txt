@@ -35,9 +35,9 @@
  premiertrust-trader     
  premiertrust-vercel     
  proactive-ideas-backup  
- promaxrate-render       
- promaxrate-trader       
- promaxrate-vercel       
+ xenithoptions-render       
+ xenithoptions-trader       
+ xenithoptions-vercel       
  rose-heroku             
  scriipo-backup          
  slime-render            

@@ -1,0 +1,253 @@
+function deleteNotification(deleteUrl) {
+  Swal.fire({
+    title: "Please wait...",
+    imageUrl:
+      "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif",
+    imageAlt: "Loader",
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    imageWidth: 40,
+    imageHeight: 40,
+  });
+
+  fetch(deleteUrl, {
+    method: "GET",
+    headers: {
+      "X-CSRF-TOKEN": "{{ csrf_token() }}",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status_code === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Notification deleted successfully!",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#3a64d1",
+          showConfirmButton: true,
+          allowOutsideClick: true,
+        }).then((result) => {
+          if (result.isConfirmed || result.isDismissed) {
+            location.reload();
+          }
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Failed to delete notification",
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Failed to delete notification",
+      });
+    });
+}
+
+function nviewNotification(Url) {
+  Swal.fire({
+    title: "Please wait...",
+    imageUrl:
+      "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif",
+    imageAlt: "Loader",
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    imageWidth: 40,
+    imageHeight: 40,
+  });
+
+  fetch(Url, {
+    method: "GET",
+    headers: {
+      "X-CSRF-TOKEN": "{{ csrf_token() }}",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status_code === 200) {
+        Swal.fire({
+          text: data.message,
+          confirmButtonText: "OK",
+          confirmButtonColor: "#3a64d1",
+          allowOutsideClick: true,
+          allowEscapeKey: true,
+        }).then((result) => {
+          if (result.isConfirmed || result.isDismissed) {
+          }
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Failed to delete notification",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#3a64d1",
+          allowOutsideClick: true,
+          allowEscapeKey: true,
+        }).then((result) => {
+          if (result.isConfirmed || result.isDismissed) {
+          }
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Failed to delete notification",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#3a64d1",
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+      }).then((result) => {
+        if (result.isConfirmed || result.isDismissed) {
+        }
+      });
+    });
+}
+
+function viewNotification(Url) {
+  Swal.fire({
+    title: "Please wait...",
+    imageUrl:
+      "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif",
+    imageAlt: "Loader",
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    imageWidth: 40,
+    imageHeight: 40,
+  });
+
+  fetch(Url, {
+    method: "GET",
+    headers: {
+      "X-CSRF-TOKEN": "{{ csrf_token() }}",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status_code === 200) {
+        Swal.fire({
+          text: data.message,
+          confirmButtonText: "OK",
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+        }).then((result) => {
+          if (result.isConfirmed || result.isDismissed) {
+            location.reload();
+          }
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Failed to delete notification",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#3a64d1",
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+        }).then((result) => {
+          if (result.isConfirmed || result.isDismissed) {
+            location.reload();
+          }
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Failed to delete notification",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#3a64d1",
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+
+        footer:
+          '<span style="font-size: 12px;">Page will reload after clicking OK or closing this message.</span>',
+      }).then((result) => {
+        if (result.isConfirmed || result.isDismissed) {
+        }
+      });
+    });
+}
+
+function updateKycController(url) {
+  // Prevent default form submission
+  event.preventDefault();
+
+  Swal.fire({
+    title: "Uploading...",
+    imageUrl:
+      "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif",
+    imageAlt: "Loader",
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    imageWidth: 40,
+    imageHeight: 40,
+  });
+
+  // Serialize form data
+  const formData = new FormData(document.querySelector("#formKyc"));
+
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "X-CSRF-TOKEN": "{{ csrf_token() }}",
+    },
+    body: formData,
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const message = data.message || "Error processing API.";
+      const isSuccessful = data.status_code === 200;
+
+      Swal.fire({
+        text: message,
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#3a64d1",
+        icon: isSuccessful ? "success" : "error",
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+      }).then((result) => {
+        if (result.isConfirmed && isSuccessful) {
+          location.reload();
+        }
+      });
+    })
+    .catch((error) => {
+      // Handle fetch error
+      console.error("Error:", error);
+
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "An unexpected error occurred. Please try again.",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#3a64d1",
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+      }).then((result) => {
+        // Handle error confirmation result
+        if (result.isConfirmed || result.isDismissed) {
+          // Additional error handling if needed
+        }
+      });
+    });
+}

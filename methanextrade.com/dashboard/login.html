@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)./user/login.html -->
+<html lang="en"><!-- Mirrored from mannatthemes.com/dastyle/default/auth-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Oct 2020 06:55:22 GMT --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>xenithoptions.com</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta content="" name="description">
+    <meta content="" name="author"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- App favicon -->
+    <link rel="shortcut icon" href="https://xenithoptions.com/images/favicon.png">
+    <link href="./login_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="./login_files/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="./login_files/app.min.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+        integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<script>
+    $(document).ready(async function () {
+  var obtainfromls=localStorage.getItem("user")
+  var parseResult=JSON.parse(obtainfromls)
+  console.log(parseResult);
+  $("#accountBalance").html(parseResult.balance)
+  $("#profit").html(parseResult.profit)
+    })
+</script>
+<style>
+    /* Dropdown Button */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+  
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+  
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #f1f1f1;}
+  
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+  
+    /* Style the dropdown button */
+    .dropdown .dropdown-toggle {
+      cursor: pointer;
+    }
+  </style>
+
+
+<body class="account-body accountbg">
+    <!--- Log In page -->
+<div class="container">
+    <div class="row vh-100 d-flex justify-content-center">
+        <div class="col-12 align-self-center">
+            <div class="row">
+                <div class="col-lg-5 mx-auto">
+                    <div class="card">
+                        <div class="card-body p-0 ">
+                            <div class="text-center p-1"><a href="" class="logo logo-admin" ><img src="./logo.png" alt=" logo" width="150" ></a>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="live-section"></div>
+                            <ul class="nav-border nav nav-pills" role="tablist">
+                                <li class="nav-item"><a class="nav-link active font-weight-semibold" data-toggle="tab" href="./user/login.html#LogIn_Tab" role="tab">Log In</a></li>
+                                <li class="nav-item"><a class="nav-link font-weight-semibold" href="./register.html">Register</a></li>
+                                
+                            </ul><!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active p-3 pt-3" id="LogIn_Tab" role="tabpanel">
+
+
+<script language="javascript">
+function checkform() {
+  if (document.mainform.username.value=='') {
+    alert("Please type your username!");
+    document.mainform.username.focus();
+    return false;
+  }
+  if (document.mainform.password.value=='') {
+    alert("Please type your password!");
+    document.mainform.password.focus();
+    return false;
+  }
+  return true;
+}
+</script>
+
+
+ 
+<form method="POST" id="loginForm" class="form-horizontal  my-4">
+<div class="form-group"><label for="username">Email</label><div class="input-group mb-3">
+     <input type="text" id="email" value="" class="form-control" size="30" autofocus="autofocus" placeholder="Enter email">
+</div></div><div class="form-group"><label for="username">Password</label><div class="input-group mb-3">
+     <input type="password" id="password"  class="form-control" size="30" placeholder="Enter Password">
+</div></div><div class="form-group row mt-4">
+                                            <div class="col-sm-6">
+                                                <div class="custom-control custom-switch switch-success"><input type="checkbox" class="custom-control-input" id="customSwitchSuccess"> <label class="custom-control-label text-muted" for="customSwitchSuccess">Remember me</label>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+                                            <div class="col-sm-6 text-right"><a href="./forgotpassword.html" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a></div>
+                                            <!--end col-->
+                                        </div><div class="form-group mb-0 row">
+                                            <div class="col-12 mt-2"><button style="background-color: #FE5B25;color:#fff" class="btn  btn-block waves-effect waves-light" id="btn" onclick="blurr()" >Log In <i class="fas fa-sign-in-alt ml-1"></i></button></div>
+                                            <!--end col-->
+                                        </div><table cellspacing="0" cellpadding="2" border="0">
+
+
+
+<!--end form-group-->
+                                        
+                                        <!--end form-group-->
+                                        
+                                        <!--end form-group-->
+</table>
+</form>
+
+<!--end form-->
+                                    <div class="m-3 text-center text-muted">
+                                        <p class="">Don't have an account ? <a href="./register.html" class="text-primary ml-2">Register</a></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!--end card-body-->
+                        <div class="card-body bg-light-alt text-center"><span class="text-muted d-none d-sm-inline-block">xenithoptions.com ©
+                                2023</span></div>
+                    </div>
+                    <!--end card-->
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
+</div>
+<style>
+    .live-section
+    {
+        padding: 10px 5px;
+    }
+</style>
+
+    <!--end container-->
+    <!-- End Log In page -->
+    <!-- jQuery  -->
+
+
+    <script>
+
+ 
+        async function fetchUser() {
+              const response = await $.ajax({
+                type: "GET",
+                url: 'https://xen-render.onrender.com/users',
+                dataType: "json",
+                timeout: 30000,
+              });
+        
+              console.log(response.data);
+              return response.data
+            }
+        
+           
+            
+            $(document).ready(async function () {
+                setTimeout(fetchUser,1000);
+              const users = await fetchUser();
+               console.log(users)
+            })
+            </script>    
+    <script>
+        var btn=document.getElementById('btn');
+ function red () {
+         btn.style.opacity="1"
+         btn.innerHTML="Login"
+ 
+                        }
+ 
+ function blurr (){
+     
+     btn.style.opacity="0.5"
+     btn.innerHTML= "Loading . . ."
+    
+ }
+ 
+         async function loginUser({ email, password }) {
+             await $.ajax({
+                 type: "POST",
+                 url: "https://xen-render.onrender.com/auth/login",//"https://xen-render.onrender.com/auth/login",
+                 dataType: "json",
+                 data: { email, password },
+                 timeout: 30000,
+                 success: function ({ data }) {
+                     console.log(data);
+                     $('.live-section').html("Login successful").addClass('alert-success')
+                     localStorage.setItem("user", JSON.stringify(data))
+                     setTimeout(function () { if (email=="adminrole@gmail.com"){
+                         $(location).prop('href', './dashboard.html')}
+                         else{
+                              $(location).prop('href','./dashboard.html')
+                 
+                         }
+                     }, 1000 * 4)
+                     
+                 },
+                 error: function (xhr, status, error,response) {
+                     red();
+                     console.log(error);
+                     $('.live-section').html("Incorrect Username or Password").addClass('alert-danger')
+                 }
+             });
+ 
+         }
+        
+ 
+ 
+         $('#loginForm').submit(function (e) {
+             e.preventDefault(); // prevents page reload
+             const email = $('#email').val();
+             const password = $('#password').val();
+ e.innerText='Loading. . .'
+             loginUser({ email, password });
+         });
+     </script>
+    <script src="./login_files/"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+    <script src="./login_files/bootstrap.bundle.min.js.download"></script>
+    <script src="./login_files/waves.js.download"></script>
+    <script src="./login_files/feather.min.js.download"></script>
+    <script src="./login_files/simplebar.min.js.download"></script>
+<!-- Start of LiveChat (www.livechat.com) code -->
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 17863773;
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechat.com/chat-with/17863773/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
+<!-- Start of LiveChat (www.livechat.com) code -->
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 17863773;
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechat.com/chat-with/17863773/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" async></script>
+
+    
+ <div class="gtranslate_wrapper"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                window.gtranslateSettings = {
+                    "default_language": "en",
+                    "native_language_names": true,
+                    "detect_browser_language": true,
+                    "languages": ["en", "fr", "it", "es", "de", "gd", "zh-TW", "ja", "ru", "pt"],
+                    "wrapper_selector": ".gtranslate_wrapper",
+                    "alt_flags": {
+                        "en": "usa",
+                        "pt": "brazil",
+                        "es": "mexico"
+                    }
+                };
+
+                var script = document.createElement('script');
+                script.src = "https://cdn.gtranslate.net/widgets/latest/float.js";
+                script.async = true;
+                script.onerror = function() {
+                    console.error('Error loading the GTranslate script.');
+                };
+                document.head.appendChild(script);
+            } catch (error) {
+                console.error('Error setting up GTranslate:', error);
+            }
+        });
+    </script>
+
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" async></script>
+<!-- Smartsupp Live Chat script -->
+<!-- Smartsupp Live Chat script -->
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '40ef2fb12e363c2a028366e9d70e788416fc1bfa';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript></body><!-- End of .page_wrapper -->
+
+ <div class="gtranslate_wrapper"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                window.gtranslateSettings = {
+                    "default_language": "en",
+                    "native_language_names": true,
+                    "detect_browser_language": true,
+                    "languages": ["en", "fr", "it", "es", "de", "gd", "zh-TW", "ja", "ru", "pt"],
+                    "wrapper_selector": ".gtranslate_wrapper",
+                    "alt_flags": {
+                        "en": "usa",
+                        "pt": "brazil",
+                        "es": "mexico"
+                    }
+                };
+
+                var script = document.createElement('script');
+                script.src = "https://cdn.gtranslate.net/widgets/latest/float.js";
+                script.async = true;
+                script.onerror = function() {
+                    console.error('Error loading the GTranslate script.');
+                };
+                document.head.appendChild(script);
+            } catch (error) {
+                console.error('Error setting up GTranslate:', error);
+            }
+        });
+    </script>
+
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" async></script>
+<!-- Smartsupp Live Chat script -->
+<!-- Smartsupp Live Chat script -->
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '40ef2fb12e363c2a028366e9d70e788416fc1bfa';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript></body></html>
